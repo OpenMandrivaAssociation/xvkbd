@@ -1,19 +1,19 @@
 %define name	xvkbd
-%define version	2.7a
-%define release %mkrel 3
+%define version	2.8
+%define release %mkrel 1
 
 Name: 	 	%{name}
 Summary: 	Virtual (on-screen) keyboard for X
 Version: 	%{version}
 Release: 	%{release}
 
-Source:		http://homepage3.nifty.com/tsato/%{name}/%{name}-%{version}.tar.bz2
+Source:		http://homepage3.nifty.com/tsato/%{name}/%{name}-%{version}.tar.gz
 URL:		http://homepage3.nifty.com/tsato/xvkbd/
 License:	GPL
 Group:		System/X11
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires:	libXaw3d-devel ImageMagick
-BuildRequires:	X11 X11-devel
+BuildRequires:	X11-devel imake
 
 %description
 xvkbd is a virtual (graphical) keyboard program for X Window System which
@@ -35,12 +35,25 @@ xmkmf
 %install
 rm -rf $RPM_BUILD_ROOT
 %makeinstall_std install.man
-rm -f $RPM_BUILD_ROOT/%_prefix/X11R6/lib/X11/app-defaults
+rm -f $RPM_BUILD_ROOT/%_prefix/lib/X11/app-defaults
 
 #menu
 mkdir -p $RPM_BUILD_ROOT%{_menudir}
 cat << EOF > $RPM_BUILD_ROOT%{_menudir}/%{name}
-?package(%{name}): command="%{name}" icon="%{name}.png" needs="x11" title="Virtual Keyboard" longtitle="On-screen keyboard for X" section="More Applications/Accessibility"
+?package(%{name}): command="%{name}" icon="%{name}.png" needs="x11" title="Virtual Keyboard" longtitle="On-screen keyboard for X" section="More Applications/Accessibility" xdg="true"
+EOF
+
+mkdir -p %{buildroot}%{_datadir}/applications
+cat > %{buildroot}%{_datadir}/applications/mandriva-%{name}.desktop <<EOF
+[Desktop Entry]
+Encoding=UTF-8
+Name=Virtual Keyboard
+Comment=On-screen keyboard for X
+Exec=%{_bindir}/%{name} 
+Icon=%{name}
+Terminal=false
+Type=Application
+Categories=X-MandrivaLinux-MoreApplications-Accessibility
 EOF
 
 #icons
@@ -63,11 +76,12 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(-,root,root)
 %doc README
-%doc %{_prefix}/X11R6/lib/X11/doc/html/xvkbd.1.html
-%_prefix/X11R6/bin/*
-%config %_sysconfdir/X11/app-defaults/*
-%_prefix/X11R6/man/man1/*
+#%doc %{_prefix}/X11R6/lib/X11/doc/html/xvkbd.1.html
+%_prefix/bin/*
+%config(noreplace) %_sysconfdir/X11/app-defaults/*
+%{_mandir}/man1/*
 %{_menudir}/%name
+%{_datadir}/applications
 %{_liconsdir}/%name.png
 %{_iconsdir}/%name.png
 %{_miconsdir}/%name.png
