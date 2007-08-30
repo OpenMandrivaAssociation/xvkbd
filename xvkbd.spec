@@ -52,7 +52,7 @@ Exec=%{_bindir}/%{name}
 Icon=%{name}
 Terminal=false
 Type=Application
-Categories=X-MandrivaLinux-MoreApplications-Accessibility
+Categories=X-MandrivaLinux-MoreApplications-Accessibility;
 EOF
 
 #icons
