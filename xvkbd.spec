@@ -38,10 +38,6 @@ rm -rf $RPM_BUILD_ROOT
 rm -f $RPM_BUILD_ROOT/%_prefix/lib/X11/app-defaults
 
 #menu
-mkdir -p $RPM_BUILD_ROOT%{_menudir}
-cat << EOF > $RPM_BUILD_ROOT%{_menudir}/%{name}
-?package(%{name}): command="%{name}" icon="%{name}.png" needs="x11" title="Virtual Keyboard" longtitle="On-screen keyboard for X" section="More Applications/Accessibility" xdg="true"
-EOF
 
 mkdir -p %{buildroot}%{_datadir}/applications
 cat > %{buildroot}%{_datadir}/applications/mandriva-%{name}.desktop <<EOF
@@ -79,7 +75,6 @@ rm -rf $RPM_BUILD_ROOT
 %_prefix/bin/*
 %config(noreplace) %_sysconfdir/X11/app-defaults/*
 %{_mandir}/man1/*
-%{_menudir}/%name
 %{_datadir}/applications
 %{_liconsdir}/%name.png
 %{_iconsdir}/%name.png
