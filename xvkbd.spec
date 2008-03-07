@@ -12,7 +12,7 @@ URL:		http://homepage3.nifty.com/tsato/xvkbd/
 License:	GPL
 Group:		System/X11
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
-BuildRequires:	libXaw3d-devel ImageMagick
+BuildRequires:	Xaw3d-devel ImageMagick
 BuildRequires:	X11-devel imake
 
 %description
