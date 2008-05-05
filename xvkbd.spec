@@ -1,5 +1,5 @@
 %define name	xvkbd
-%define version	2.8
+%define version	3.0
 %define release %mkrel 1
 
 Name: 	 	%{name}
