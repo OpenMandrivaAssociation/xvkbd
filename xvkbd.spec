@@ -1,6 +1,6 @@
 %define name	xvkbd
 %define version	3.0
-%define release %mkrel 3
+%define release %mkrel 4
 
 Name: 	 	%{name}
 Summary: 	Virtual (on-screen) keyboard for X
@@ -12,8 +12,14 @@ URL:		http://homepage3.nifty.com/tsato/xvkbd/
 License:	GPL
 Group:		System/X11
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
-BuildRequires:	Xaw3d-devel imagemagick
-BuildRequires:	X11-devel imake
+BuildRequires:	Xaw3d-devel
+BuildRequires:	libx11-devel
+BuildRequires:	libxmu-devel
+BuildRequires:	libxt-devel
+BuildRequires:	libxtst-devel
+BuildRequires:	libxaw-devel
+BuildRequires:	imagemagick
+BuildRequires:	imake
 
 %description
 xvkbd is a virtual (graphical) keyboard program for X Window System which
@@ -30,8 +36,8 @@ some modern mice with multiple buttons.
 
 %build
 xmkmf
-%make
-										
+%make CDEBUGFLAGS="%optflags" EXTRA_LDOPTIONS="%ldflags"
+
 %install
 rm -rf $RPM_BUILD_ROOT
 %makeinstall_std install.man
