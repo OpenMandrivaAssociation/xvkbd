@@ -16,6 +16,7 @@ BuildRequires:	libx11-devel
 BuildRequires:	libxmu-devel
 BuildRequires:	libxt-devel
 BuildRequires:	libxtst-devel
+BuildRequires:	pkgconfig(xi)
 BuildRequires:	libxaw-devel
 BuildRequires:	imagemagick
 BuildRequires:	imake
