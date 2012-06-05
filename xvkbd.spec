@@ -1,17 +1,16 @@
 %define name	xvkbd
-%define version	3.0
-%define release %mkrel 4
+%define version	3.3
+%define release 1
 
 Name: 	 	%{name}
 Summary: 	Virtual (on-screen) keyboard for X
 Version: 	%{version}
 Release: 	%{release}
 
-Source:		http://homepage3.nifty.com/tsato/%{name}/%{name}-%{version}.tar.gz
+Source0:	http://homepage3.nifty.com/tsato/%{name}/%{name}-%{version}.tar.gz
 URL:		http://homepage3.nifty.com/tsato/xvkbd/
 License:	GPL
 Group:		System/X11
-BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires:	Xaw3d-devel
 BuildRequires:	libx11-devel
 BuildRequires:	libxmu-devel
@@ -65,21 +64,7 @@ convert -size 32x32 xvkbd.xbm $RPM_BUILD_ROOT/%_iconsdir/%name.png
 mkdir -p $RPM_BUILD_ROOT/%_miconsdir
 convert -size 16x16 xvkbd.xbm $RPM_BUILD_ROOT/%_miconsdir/%name.png
 
-%clean
-rm -rf $RPM_BUILD_ROOT
-
-%if %mdkversion < 200900
-%post
-%update_menus
-%endif
-		
-%if %mdkversion < 200900
-%postun
-%clean_menus
-%endif
-
 %files
-%defattr(-,root,root)
 %doc README
 #%doc %{_prefix}/X11R6/lib/X11/doc/html/xvkbd.1.html
 %_prefix/bin/*
