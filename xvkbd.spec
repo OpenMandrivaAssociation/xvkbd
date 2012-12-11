@@ -76,3 +76,50 @@ convert -size 16x16 xvkbd.xbm $RPM_BUILD_ROOT/%_miconsdir/%name.png
 %{_iconsdir}/%name.png
 %{_miconsdir}/%name.png
 
+
+
+%changelog
+* Tue Jun 05 2012 Alexander Khrukin <akhrukin@mandriva.org> 3.3-1
++ Revision: 802706
+- BR: pkgconfig(xi)
+- version update 3.3
+
+* Fri Jan 21 2011 Funda Wang <fwang@mandriva.org> 3.0-4
++ Revision: 632026
+- simplify BR
+
+* Wed Sep 09 2009 Thierry Vignaud <tv@mandriva.org> 3.0-3mdv2010.0
++ Revision: 435325
+- rebuild
+
+  + Oden Eriksson <oeriksson@mandriva.com>
+    - lowercase ImageMagick
+
+* Sat Aug 09 2008 Thierry Vignaud <tv@mandriva.org> 3.0-2mdv2009.0
++ Revision: 269845
+- rebuild early 2009.0 package (before pixel changes)
+
+  + Pixel <pixel@mandriva.com>
+    - rpm filetriggers deprecates update_menus/update_scrollkeeper/update_mime_database/update_icon_cache/update_desktop_database/post_install_gconf_schemas
+
+* Mon May 05 2008 Funda Wang <fwang@mandriva.org> 3.0-1mdv2009.0
++ Revision: 201441
+- update to new version 3.0
+
+* Fri Mar 07 2008 Antoine Ginies <aginies@mandriva.com> 2.8-1mdv2008.1
++ Revision: 181236
+- fix xaw3d-devel buildrequires
+
+  + Thierry Vignaud <tv@mandriva.org>
+    - drop old menu
+    - kill re-definition of %%buildroot on Pixel's request
+    - kill desktop-file-validate's error: string list key "Categories" in group "Desktop Entry" does not have a semicolon (";") as trailing character
+    - kill desktop-file-validate's 'warning: key "Encoding" in group "Desktop Entry" is deprecated'
+
+  + Olivier Blin <blino@mandriva.org>
+    - restore BuildRoot
+
+* Mon Jul 16 2007 Olivier Thauvin <nanardon@mandriva.org> 2.8-1mdv2008.0
++ Revision: 52642
+- 2.8
+
