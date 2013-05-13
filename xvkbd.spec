@@ -12,12 +12,12 @@ URL:		http://homepage3.nifty.com/tsato/xvkbd/
 License:	GPL
 Group:		System/X11
 BuildRequires:	Xaw3d-devel
-BuildRequires:	libx11-devel
-BuildRequires:	libxmu-devel
-BuildRequires:	libxt-devel
-BuildRequires:	libxtst-devel
+BuildRequires:	pkgconfig(x11)
+BuildRequires:	pkgconfig(xmu)
+BuildRequires:	pkgconfig(xt)
+BuildRequires:	pkgconfig(xtst)
 BuildRequires:	pkgconfig(xi)
-BuildRequires:	libxaw-devel
+BuildRequires:	pkgconfig(xaw7)
 BuildRequires:	imagemagick
 BuildRequires:	imake
 
