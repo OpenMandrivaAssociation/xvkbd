@@ -1,6 +1,6 @@
 %define name	xvkbd
 %define version	3.3
-%define release 1
+%define release  2
 
 Name: 	 	%{name}
 Summary: 	Virtual (on-screen) keyboard for X
