@@ -1,2 +1,4 @@
+removed_sources:
+  xvkbd-3.3.tar.gz: 967b7d2f3e70a4a588fa5b10073d4e9c79c11ce5
 sources:
-  "xvkbd-3.3.tar.gz": 967b7d2f3e70a4a588fa5b10073d4e9c79c11ce5
+  xvkbd-3.5.tar.gz: 11b38c7eb89281e692bdf339550b2c751efd8335

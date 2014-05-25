@@ -1,11 +1,7 @@
-%define name	xvkbd
-%define version	3.3
-%define release  2
-
-Name: 	 	%{name}
+Name:		xvkbd
 Summary: 	Virtual (on-screen) keyboard for X
-Version: 	%{version}
-Release: 	%{release}
+Version: 	3.5
+Release: 	1
 
 Source0:	http://homepage3.nifty.com/tsato/%{name}/%{name}-%{version}.tar.gz
 URL:		http://homepage3.nifty.com/tsato/xvkbd/
