@@ -1,7 +1,7 @@
 Name:		xvkbd
 Summary: 	Virtual (on-screen) keyboard for X
 Version: 	3.5
-Release: 	1
+Release: 	2
 
 Source0:	http://homepage3.nifty.com/tsato/%{name}/%{name}-%{version}.tar.gz
 URL:		http://homepage3.nifty.com/tsato/xvkbd/
