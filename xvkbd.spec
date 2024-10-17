@@ -4,7 +4,7 @@ Version: 	4.1
 Release: 	1
 
 Source0:	http://t-sato.in.coocan.jp/xvkbd/%{name}-%{version}.tar.gz
-URL:		http://t-sato.in.coocan.jp/xvkbd/
+URL:		https://t-sato.in.coocan.jp/xvkbd/
 License:	GPL
 Group:		System/X11
 BuildRequires:	Xaw3d-devel
